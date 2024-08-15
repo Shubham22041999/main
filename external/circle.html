@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>awesome</title>
+	<style type="text/css">
+		body{
+			margin: 70px;
+			padding: 25;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: black;
+
+		}
+
+		.circle{
+
+			position: relative;
+			height: 60vh;
+			width: 60vh;
+			border-radius: 50%;
+			background:linear-gradient(#33ccff,#ff0066);
+			animation: animate 0.5s linear infinite;
+		}
+		@keyframes animate{
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(360deg);
+			}
+		}
+		.circle:after{
+			content: '';
+			position: absolute;
+			top: 35px;
+			right:  35px;
+			left: 35px;
+			bottom: 35px;
+			background-color: black;
+			border-radius: 50%;
+		}
+		.circle span{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			border-radius: 50%;
+			background:linear-gradient(#33ccff,#ff0066);
+
+			
+		}
+		.circle span:nth-child(1){
+			filter: blur(5px);
+		}
+		.circle span:nth-child(2){
+			filter: blur(10px);
+		}
+		.circle span:nth-child(3){
+			filter: blur(20px);
+		}
+		.circle span:nth-child(4){
+			filter: blur(30px);
+		}
+		/*span{
+			color: red;
+			font-size: 45px;
+		}*/
+		
+
+	</style>
+</head>
+<body>
+
+<div class="circle">
+
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+
+</div>
+</body>
+</html>

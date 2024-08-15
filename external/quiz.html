@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>quiz</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			
+		}
+		section{
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			background-color: #82ccdd
+
+		}
+		section h1{
+			text-transform: capitalize;
+			padding-bottom: 30px;
+			font-size: 2rem;
+			text-shadow: 1px 1px 2px red;
+			animation: sk 1s linear infinite;
+			animation-direction: alternate;
+
+		}
+		@keyframes sk{
+			from{transform: translateX(-20px);}
+			to{transform: translateX(20px);}
+		}
+		.centerdiv{
+			width: 500px;
+			height: 400px;
+			background-color: #78ec8f;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
+		.insertbox{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100px;
+		}
+		#v1,#v2{
+			text-align: center;
+			padding: 20px 30px;
+			width: 70px;
+			font-size: 30px;
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 ;
+		}
+		.box1 p{
+			font-size: 60px;
+			margin: 0 12px 0 15px;
+		}
+		.middlebox #answ{
+			margin: 30px 0;
+			padding: 5px 0;
+			font-size: 30px;
+			text-align: center;
+			width: 180px;
+		}
+		.sentbox button{
+			padding: 10px 20px;
+			font-size: 0 8rem;
+			text-transform: uppercase;
+			color: white;
+			border:none;
+			border-bottom-left-radius: 25px;
+			border-bottom-right-radius: 25px;
+			background-color: #079992; 
+		}
+	</style>
+</head>
+<body>
+<section>
+	<h1> math Addition Quiz Game:)</h1>
+	<div class="centerdiv">
+		<div class="insertbox">
+			<div class="box1">
+				<input type="text" id="v1"name="">
+			</div>
+			<div class="box1">
+				<p>+</p>
+			</div>
+			<div class="box1">
+				<input type="text" id="v2"name="">
+			</div>
+		</div>
+		<div class="middlebox">
+			<input type="text" id="answ" name="">
+		</div>
+		<div class="sentbox">
+			<button onclick="jsgame()">Check Answer</button>
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+	let n1=Math.floor(Math.random()*10000+1);
+	let n2=Math.floor(Math.random()*10000+1);
+	document.getElementById('v1').value=n1;
+	document.getElementById('v2').value=n2;
+	let ans=n1+n2;
+	/*console.log(ans);*/
+	const jsgame=()=> {
+		var usera=document.getElementById('answ').value;
+		if (usera==ans) {
+			alert(
+				'Well Done! Your Ans is Correct.');
+			}
+			else{
+				alert(
+				"correct Answer is "+ ans +". Try again.");
+			}
+			document.getElementById('answ').value="";
+			 n1=Math.floor(Math.random()*10000+1);
+			 n2=Math.floor(Math.random()*10000+1);
+			document.getElementById('v1').value=n1;
+			document.getElementById('v2').value=n2;
+			 ans=n1+n2;
+	}
+
+</script>
+</body>
+</html>
